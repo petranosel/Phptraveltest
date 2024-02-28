@@ -1,21 +1,14 @@
-
-
-
-
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertTrue;
-
-public class testphptravel {
-
+public class travelphphSignup {
 
     WebDriver driver;
 
@@ -29,14 +22,13 @@ public class testphptravel {
     @Test
     public void openPhpTravelsDemo() {
 
-        driver.get("https://phptravels.com/demo/");
+        driver.get("https://phptravels.org/register.php");
 
 
         //perform assertions here
     }
-    @Test
+
     public void testRegistration() {
-        // Locate elements by their IDs, names, or any other suitable locators
         WebElement firstNameInput = driver.findElement(By.name("firstname"));
         WebElement lastNameInput = driver.findElement(By.name("lastname"));
         WebElement emailInput = driver.findElement(By.name("email"));
@@ -76,11 +68,9 @@ public class testphptravel {
         WebElement successMessage = driver.findElement(By.xpath("//div[contains(@class, 'alert-success')]"));
         assertTrue(successMessage.isDisplayed());
     }
-    @AfterMethod
+
+    @AfterClass
     public void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
-}
+        driver.quit();
+
+}}
