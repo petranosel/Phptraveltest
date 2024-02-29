@@ -30,11 +30,28 @@ public class testphptravel {
     public void openPhpTravelsDemo() {
 
         driver.get("https://phptravels.com/demo/");
+        WebElement firstname = driver.findElement(By.xpath("//*[@id=\"swup\"]/section[1]/div/div/div[1]/div/div/div/div/div/div/div/div[1]/div[1]/div[1]/div/input"));
+        firstname.click();
+        firstname.sendKeys("Mohi");
+
+        WebElement lastname = driver.findElement(By.xpath("//*[@id=\"swup\"]/section[1]/div/div/div[1]/div/div/div/div/div/div/div/div[1]/div[1]/div[2]/div/input"));
+        lastname.sendKeys("Uddin");
+
+        WebElement businessname = driver.findElement(By.xpath("//*[@id=\"swup\"]/section[1]/div/div/div[1]/div/div/div/div/div/div/div/div[1]/div[2]/input"));
+        businessname.sendKeys("GTL");
+
+        WebElement email = driver.findElement(By.xpath("//*[@id=\"swup\"]/section[1]/div/div/div[1]/div/div/div/div/div/div/div/div[1]/div[3]/input"));
+        email.sendKeys("mohi123@example.com");
+
+        WebElement result = driver.findElement(By.xpath("//*[@id=\"number\"]"));
+        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", result);
 
 
-        //perform assertions here
+        driver.findElement(By.xpath("//*[@id=\"demo\"]")).click();
+
+
     }
-    
+
     @AfterMethod
     public void tearDown() {
         // Close the browser
@@ -43,3 +60,4 @@ public class testphptravel {
         }
     }
 }
+
