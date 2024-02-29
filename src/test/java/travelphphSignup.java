@@ -51,11 +51,11 @@ public class travelphphSignup {
         emailInput.sendKeys("johndoe@example.com");
         passwordInput.sendKeys("testpassword");
         confirmPasswordInput.sendKeys("testpassword");
-        cityInput.sendKeys("City");
-        stateInput.sendKeys("State");
+        cityInput.sendKeys("dc");
+        stateInput.sendKeys("washington");
         phoneInput.sendKeys("1234567890");
-        postcodeInput.sendKeys("12345");
-        billingAddressInput.sendKeys("123 Main St, City, Country");
+        postcodeInput.sendKeys("20002");
+        billingAddressInput.sendKeys("123 Main St, City, usa");
         additionalInfoInput.sendKeys("Additional information");
         securityQuestionInput.sendKeys("What is your favorite color?");
         securityAnswerInput.sendKeys("Blue");
